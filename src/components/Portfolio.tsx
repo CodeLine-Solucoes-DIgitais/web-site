@@ -1,5 +1,10 @@
 import { useId } from 'react';
 
+// Importando as imagens
+import erpSystemImg from '../assets/images/projects/erp-system.svg';
+import ecommerceImg from '../assets/images/projects/ecommerce.svg';
+import chatbotImg from '../assets/images/projects/chatbot.svg';
+
 const Portfolio = () => {
     const portfolioId = useId();
     const projects = [
@@ -8,7 +13,7 @@ const Portfolio = () => {
             title: "Sistema ERP Corporativo",
             category: "Sistema Web",
             description: "Sistema completo de gestão empresarial com módulos financeiro, vendas e estoque.",
-            image: "/images/projects/erp-system.svg",
+            image: erpSystemImg,
             technologies: ["React", "Node.js", "PostgreSQL", "Redis"],
             link: "#"
         },
@@ -17,7 +22,7 @@ const Portfolio = () => {
             title: "E-commerce Fashion Store",
             category: "Site",
             description: "Loja virtual moderna com catálogo dinâmico, carrinho e sistema de pagamento.",
-            image: "/images/projects/ecommerce.svg",
+            image: ecommerceImg,
             technologies: ["Next.js", "Stripe", "MongoDB", "Tailwind"],
             link: "#"
         },
@@ -26,7 +31,7 @@ const Portfolio = () => {
             title: "Chatbot Atendimento IA",
             category: "Automação IA",
             description: "Agente inteligente para atendimento ao cliente com processamento de linguagem natural.",
-            image: "/images/projects/chatbot.svg",
+            image: chatbotImg,
             technologies: ["Python", "OpenAI", "FastAPI", "WebSocket"],
             link: "#"
         },
@@ -35,7 +40,7 @@ const Portfolio = () => {
             title: "App Gestão de Projetos",
             category: "Sistema Web",
             description: "Plataforma colaborativa para gestão de equipes e projetos com dashboards em tempo real.",
-            image: "/images/projects/erp-system.svg", // Reutilizando até criar mais imagens
+            image: erpSystemImg, // Reutilizando até criar mais imagens
             technologies: ["Vue.js", "Laravel", "MySQL", "Socket.io"],
             link: "#"
         },
@@ -44,7 +49,7 @@ const Portfolio = () => {
             title: "Landing Page Corporativa",
             category: "Site",
             description: "Site institucional responsivo com animações modernas e otimização para conversão.",
-            image: "/images/projects/ecommerce.svg", // Reutilizando até criar mais imagens
+            image: ecommerceImg, // Reutilizando até criar mais imagens
             technologies: ["React", "GSAP", "Netlify", "CMS"],
             link: "#"
         },
@@ -53,7 +58,7 @@ const Portfolio = () => {
             title: "Automação de Marketing",
             category: "Automação IA",
             description: "Sistema automatizado para campanhas de email marketing e análise de engajamento.",
-            image: "/images/projects/chatbot.svg", // Reutilizando até criar mais imagens
+            image: chatbotImg, // Reutilizando até criar mais imagens
             technologies: ["Node.js", "TensorFlow", "Redis", "AWS"],
             link: "#"
         }
