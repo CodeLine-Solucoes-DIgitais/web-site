@@ -36,6 +36,12 @@ jobs:
       - name: Add .nojekyll file
         run: touch ./dist/.nojekyll
 
+      - name: List dist contents for debugging
+        run: ls -la ./dist/
+
+      - name: Show index.html content for debugging
+        run: head -20 ./dist/index.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
