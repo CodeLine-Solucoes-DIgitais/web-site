@@ -1,4 +1,7 @@
+import { useId } from 'react';
+
 const Portfolio = () => {
+    const portfolioId = useId();
     const projects = [
         {
             id: 1,
@@ -59,7 +62,7 @@ const Portfolio = () => {
     const categories = ["Todos", "Sistema Web", "Site", "Automação IA"];
 
     return (
-        <section id="portfolio" className="py-20 bg-secondary-50">
+        <section id={`portfolio-${portfolioId}`} className="py-20 bg-secondary-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
@@ -120,9 +123,9 @@ const Portfolio = () => {
 
                                 {/* Technologies */}
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.technologies.map((tech, index) => (
+                                    {project.technologies.map((tech) => (
                                         <span
-                                            key={index}
+                                            key={tech}
                                             className="px-3 py-1 bg-secondary-100 text-secondary-700 text-xs rounded-full"
                                         >
                                             {tech}
@@ -136,7 +139,13 @@ const Portfolio = () => {
                                     className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold group-hover:translate-x-1 transition-all duration-300"
                                 >
                                     Ver projeto
-                                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg
+                                        className="w-4 h-4 ml-2"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        aria-label="Ícone seta para direita"
+                                    >
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                     </svg>
                                 </a>
@@ -160,7 +169,13 @@ const Portfolio = () => {
                             className="inline-flex items-center bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
                         >
                             Solicitar Orçamento
-                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg
+                                className="w-5 h-5 ml-2"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                aria-label="Ícone seta para direita"
+                            >
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </a>

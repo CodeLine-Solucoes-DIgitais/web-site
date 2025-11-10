@@ -5,7 +5,7 @@
   
   <p><strong>Site institucional da CodeLine - Transformando ideias em soluções digitais</strong></p>
   
-  [![Deploy](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://codeline-website.vercel.app)
+  [![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-green?style=for-the-badge&logo=github)](https://codeline-solucoes-digitais.github.io/web-site/)
   [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
   [![Tailwind](https://img.shields.io/badge/Tailwind-3.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
@@ -73,5 +73,22 @@ src/
 
 ### Tipografia
 - **Fonte**: Inter (Google Fonts)
-])
+
+## 🚀 Deploy
+
+### GitHub Pages
+O projeto está configurado para deploy automático no GitHub Pages através do GitHub Actions.
+
+#### Como habilitar:
+1. Vá até as **Settings** do repositório no GitHub
+2. Na seção **Pages**, selecione:
+   - **Source**: GitHub Actions
+3. O deploy será feito automaticamente a cada push na branch `main`
+
+#### URL de acesso:
 ```
+https://codeline-solucoes-digitais.github.io/web-site/
+```
+
+#### Workflow
+O arquivo `.github/workflows/github-pages.yml` contém toda a configuração necessária para o deploy automático.
