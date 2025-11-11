@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
           cache: "npm"
 
       - name: Install dependencies
@@ -38,21 +38,8 @@ jobs:
 
       - name: Create 404.html for SPA
         run: |
-          cat > dist/404.html << 'EOF'
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <meta charset="utf-8">
-            <title>CodeLine</title>
-            <script>
-              window.location.replace('/web-site/');
-            </script>
-          </head>
-          <body>
-            <p>Redirecionando...</p>
-          </body>
-          </html>
-          EOF
+          # Copia o index gerado para servir como fallback em SPAs (não usar redirect absoluto)
+          cp dist/index.html dist/404.html
 
       - name: List dist contents (debug)
         run: |
