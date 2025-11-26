@@ -11,7 +11,7 @@ const Header = () => {
                     <div className="flex-shrink-0">
                         <a href="#inicio" className="flex items-center">
                             <img
-                                src="/images/logo/CodeLine-removebg.png"
+                                src="./images/logo/CodeLine-removebg.png"
                                 alt="CodeLine"
                                 className="h-40 w-auto block"
                             />
