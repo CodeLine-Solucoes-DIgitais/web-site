@@ -5,13 +5,17 @@ const Header = () => {
 
     return (
         <header className="bg-white shadow-lg fixed w-full top-0 z-50">
-            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
+            <nav className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+                <div className="flex justify-between items-center">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <h1 className="text-2xl font-bold text-primary-600">
-                            Code<span className="text-secondary-900">Line</span>
-                        </h1>
+                        <a href="#inicio" className="flex items-center">
+                            <img
+                                src="/images/logo/CodeLine-removebg.png"
+                                alt="CodeLine"
+                                className="h-40 w-auto block"
+                            />
+                        </a>
                     </div>
 
                     {/* Desktop Menu */}
@@ -53,6 +57,7 @@ const Header = () => {
                     {/* Mobile menu button */}
                     <div className="md:hidden">
                         <button
+                            type="button"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="text-secondary-700 hover:text-primary-600 focus:outline-none focus:text-primary-600"
                         >
