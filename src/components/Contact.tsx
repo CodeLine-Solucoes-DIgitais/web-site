@@ -10,6 +10,8 @@ const Contact = () => {
         service: '',
         message: ''
     });
+    const [isLoading, setIsLoading] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({
@@ -18,11 +20,42 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Aqui você pode integrar com um serviço de email ou API
-        console.log('Form submitted:', formData);
-        alert('Mensagem enviada! Entraremos em contato em breve.');
+        setIsLoading(true);
+        setSubmitStatus('idle');
+
+        try {
+            const response = await fetch('https://n8n.ronnysenna.com.br/webhook/form-site', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    company: '',
+                    service: '',
+                    message: ''
+                });
+                console.log('Form submitted successfully:', formData);
+                setTimeout(() => setSubmitStatus('idle'), 5000);
+            } else {
+                setSubmitStatus('error');
+                console.error('Error submitting form:', response.statusText);
+            }
+        } catch (error) {
+            setSubmitStatus('error');
+            console.error('Error submitting form:', error);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     return (
@@ -143,10 +176,26 @@ const Contact = () => {
 
                             <button
                                 type="submit"
-                                className="w-full bg-primary-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
+                                disabled={isLoading}
+                                className={`w-full px-8 py-4 rounded-lg text-lg font-semibold transform transition-all duration-200 shadow-lg ${isLoading
+                                        ? 'bg-secondary-400 text-white cursor-not-allowed'
+                                        : 'bg-primary-600 text-white hover:bg-primary-700 hover:scale-105 hover:shadow-xl'
+                                    } ${submitStatus === 'success' ? 'ring-2 ring-green-500' : ''} ${submitStatus === 'error' ? 'ring-2 ring-red-500' : ''}`}
                             >
-                                Enviar Mensagem
+                                {isLoading ? 'Enviando...' : 'Enviar Mensagem'}
                             </button>
+
+                            {submitStatus === 'success' && (
+                                <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                                    ✓ Mensagem enviada com sucesso! Entraremos em contato em breve.
+                                </div>
+                            )}
+
+                            {submitStatus === 'error' && (
+                                <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                                    ✗ Erro ao enviar a mensagem. Tente novamente ou entre em contato por telefone.
+                                </div>
+                            )}
                         </form>
                     </div>
 
@@ -172,7 +221,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-secondary-900">Email</h4>
-                                        <p className="text-secondary-600">contato@codeline.com.br</p>
+                                        <p className="text-secondary-600">contato@codeline.dev.br</p>
                                     </div>
                                 </div>
 
@@ -190,7 +239,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-secondary-900">Telefone</h4>
-                                        <p className="text-secondary-600">(11) 99999-9999</p>
+                                        <p className="text-secondary-600">(85) 99190-4540</p>
                                     </div>
                                 </div>
 
@@ -209,7 +258,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-secondary-900">Localização</h4>
-                                        <p className="text-secondary-600">São Paulo, SP - Brasil</p>
+                                        <p className="text-secondary-600">Fortaleza, CE - Brasil</p>
                                     </div>
                                 </div>
                             </div>
