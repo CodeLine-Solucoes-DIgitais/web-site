@@ -1,12 +1,9 @@
-import { useId } from "react";
-
 // Importando as imagens (arquivos existentes em assets)
 import erpSystemImg from "../assets/images/projects/erp.png";
 import ecommerceImg from "../assets/images/projects/e-commerce.png";
 import chatbotImg from "../assets/images/projects/chatIA.png";
 
 const Portfolio = () => {
-  const portfolioId = useId();
   const projects = [
     {
       id: 1,

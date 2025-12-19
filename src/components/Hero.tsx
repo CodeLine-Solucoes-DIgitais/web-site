@@ -1,16 +1,10 @@
-import { useId } from "react";
 import proj1 from "../assets/images/projects/erp.png";
 import proj2 from "../assets/images/projects/e-commerce.png";
 import proj3 from "../assets/images/projects/chatIA.png";
 
 const Hero = () => {
-  const heroId = useId();
-
   return (
-    <section
-      id="inicio"
-      className="relative pt-44 pb-20 overflow-hidden"
-    >
+    <section id="inicio" className="relative pt-44 pb-20 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-100"></div>
 

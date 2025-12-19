@@ -1,8 +1,4 @@
-import { useId } from "react";
-
 const About = () => {
-  const aboutId = useId();
-
   return (
     <section id="sobre" className="py-20 bg-secondary-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
