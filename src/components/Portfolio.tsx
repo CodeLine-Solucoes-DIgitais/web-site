@@ -38,42 +38,12 @@ const Portfolio = () => {
       technologies: ["Python", "OpenAI", "FastAPI", "WebSocket"],
       link: "#",
     },
-    {
-      id: 4,
-      title: "App Gestão de Projetos",
-      category: "Sistema Web",
-      description:
-        "Plataforma colaborativa para gestão de equipes e projetos com dashboards em tempo real.",
-      image: erpSystemImg, // Reutilizando até criar mais imagens
-      technologies: ["Vue.js", "Laravel", "MySQL", "Socket.io"],
-      link: "#",
-    },
-    {
-      id: 5,
-      title: "Landing Page Corporativa",
-      category: "Site",
-      description:
-        "Site institucional responsivo com animações modernas e otimização para conversão.",
-      image: ecommerceImg, // Reutilizando até criar mais imagens
-      technologies: ["React", "GSAP", "Netlify", "CMS"],
-      link: "#",
-    },
-    {
-      id: 6,
-      title: "Automação de Marketing",
-      category: "Automação IA",
-      description:
-        "Sistema automatizado para campanhas de email marketing e análise de engajamento.",
-      image: chatbotImg, // Reutilizando até criar mais imagens
-      technologies: ["Node.js", "TensorFlow", "Redis", "AWS"],
-      link: "#",
-    },
   ];
 
   const categories = ["Todos", "Sistema Web", "Site", "Automação IA"];
 
   return (
-    <section id={`portfolio-${portfolioId}`} className="py-20 bg-secondary-50">
+    <section id="projetos" className="py-20 bg-secondary-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">

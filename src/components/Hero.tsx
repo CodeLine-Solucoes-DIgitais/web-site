@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <section
-      id={`inicio-${heroId}`}
+      id="inicio"
       className="relative pt-44 pb-20 overflow-hidden"
     >
       {/* Background gradient */}
