@@ -221,7 +221,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-secondary-900">Email</h4>
-                                        <p className="text-secondary-600">contato@codeline.dev.br</p>
+                                        <p className="text-secondary-600">codelinesolucoes@gmail.com</p>
                                     </div>
                                 </div>
 
@@ -239,7 +239,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-secondary-900">Telefone</h4>
-                                        <p className="text-secondary-600">(85) 99190-4540</p>
+                                        <p className="text-secondary-600">(85) 99410-8087</p>
                                     </div>
                                 </div>
 
